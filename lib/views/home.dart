@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/services/database.dart';
+import 'package:quiz_app/shared/nav.dart';
 import 'package:quiz_app/views/create_quiz.dart';
 import 'package:quiz_app/views/play_quiz.dart';
 import 'package:quiz_app/widgets/widget.dart';
@@ -53,12 +54,13 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        title: appBar(context),
+        iconTheme: IconThemeData(color: Colors.black),
         brightness: Brightness.light,
         elevation: 0.0,
         backgroundColor: Colors.transparent,
         //brightness: Brightness.li,
       ),
+      drawer: NavBar(),
       body: Container(
         child: Column(children: [
           quizList()
@@ -66,6 +68,7 @@ class _HomeState extends State<Home> {
     ),
 floatingActionButton: FloatingActionButton(
     child: Icon(Icons.add),
+    backgroundColor: Colors.red,
     onPressed: (){
       Navigator.push(context, MaterialPageRoute(
       builder: (context) => CreateQuiz()));

@@ -54,6 +54,7 @@ class _AddQuestionState extends State<AddQuestion>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: AppBar(
         leading: BackButton(
@@ -132,9 +133,7 @@ class _AddQuestionState extends State<AddQuestion>{
                       children: [
                         GestureDetector(
                           onTap: () {
-
                            Navigator.pop(context);
-
                           },
                           child: Container(
                             alignment: Alignment.center,
@@ -142,10 +141,10 @@ class _AddQuestionState extends State<AddQuestion>{
                             padding: EdgeInsets.symmetric(
                                 horizontal: 24, vertical: 20),
                             decoration: BoxDecoration(
-                                color: Colors.blue,
+                                color: Colors.red,
                                 borderRadius: BorderRadius.circular(30)),
                             child: Text(
-                              "Submit",
+                              "Selesai",
                               style:
                                   TextStyle(fontSize: 16, color: Colors.white),
                             ),
@@ -164,7 +163,7 @@ class _AddQuestionState extends State<AddQuestion>{
                             padding: EdgeInsets.symmetric(
                                 horizontal: 24, vertical: 20),
                             decoration: BoxDecoration(
-                                color: Colors.blue,
+                                color: Colors.red,
                                 borderRadius: BorderRadius.circular(30)),
                             child: Text(
                               "Add Question",
