@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:quiz_app/views/home.dart';
+import 'package:quiz_app/views/nilai_akm.dart';
 
 class NavBar extends StatelessWidget {
   @override
@@ -16,7 +17,10 @@ class NavBar extends StatelessWidget {
               ),
               ListTile(
                 title: Text('Nilai AKM'),
-                onTap: (){},
+                onTap: (){
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => nilaiAkm()));
+                },
               ),
             ]
         )

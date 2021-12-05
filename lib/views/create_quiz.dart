@@ -57,7 +57,6 @@ class _CreateQuizState extends State<CreateQuiz> {
         leading: BackButton(
           color: Colors.black54,
         ),
-        title: appBar(context),
         brightness: Brightness.light,
         elevation: 0.0,
         backgroundColor: Colors.transparent,

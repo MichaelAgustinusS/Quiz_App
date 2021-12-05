@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/models/question_model.dart';
 import 'package:quiz_app/services/database.dart';
+import 'package:quiz_app/views/results.dart';
 import 'package:quiz_app/widgets/quiz_play_widgets.dart';
 import 'package:quiz_app/widgets/widget.dart';
 
@@ -128,6 +129,17 @@ class _QuizPlayState extends State<QuizPlay> {
                 ),
               ),
           ),
+          floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.check),
+        onPressed: (){
+          Navigator.pushReplacement(context, MaterialPageRoute(
+              builder: (context) => Results(
+                correct: _correct,
+                incorrect: _incorrect,
+                total: total,
+              )));
+        }
+      )
     );
   }
 }
@@ -203,7 +215,7 @@ class _QuizPlayTileState extends State<QuizPlayTile> {
               horizontal: 20
             ),
             child: Text(
-              "Q${widget.index + 1} ${widget.questionModel.question}",
+              "${widget.index + 1}. ${widget.questionModel.question}",
               style:
                   TextStyle(fontSize: 18, color: Colors.black.withOpacity(0.8)),
             ),
@@ -234,7 +246,7 @@ class _QuizPlayTileState extends State<QuizPlayTile> {
               }
             },
             child: OptionTile(
-              option: "A",
+              option: "  A",
               description: "${widget.questionModel.option1}",
               correctAnswer: widget.questionModel.correctOption,
               optionSelected: optionSelected,
@@ -266,7 +278,7 @@ class _QuizPlayTileState extends State<QuizPlayTile> {
               }
             },
             child: OptionTile(
-              option: "B",
+              option: "  B",
               description: "${widget.questionModel.option2}",
               correctAnswer: widget.questionModel.correctOption,
               optionSelected: optionSelected,
@@ -298,7 +310,7 @@ class _QuizPlayTileState extends State<QuizPlayTile> {
               }
             },
             child: OptionTile(
-              option: "C",
+              option: "  C",
               description: "${widget.questionModel.option3}",
               correctAnswer: widget.questionModel.correctOption,
               optionSelected: optionSelected,
@@ -330,7 +342,7 @@ class _QuizPlayTileState extends State<QuizPlayTile> {
               }
             },
             child: OptionTile(
-              option: "D",
+              option: "  D",
               description: "${widget.questionModel.option4}",
               correctAnswer: widget.questionModel.correctOption,
               optionSelected: optionSelected,

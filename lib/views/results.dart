@@ -23,7 +23,7 @@ class _ResultsState extends State<Results> {
               Container(
                 padding: EdgeInsets.symmetric(horizontal: 24),
                 child: Text(
-                    "you answered ${widget.correct} answers correctly and ${widget.incorrect} answeres incorrectly",
+                    "Anda Menjawab ${widget.correct} Soal Dengan Benar Dan ${widget.incorrect} Soal Salah",
                 textAlign: TextAlign.center,),
 
               ),
@@ -38,7 +38,7 @@ class _ResultsState extends State<Results> {
                     color: Colors.red,
                     borderRadius: BorderRadius.circular(30)
                   ),
-                  child: Text("Go to home", style: TextStyle(color: Colors.white, fontSize: 19),),
+                  child: Text("Selesai", style: TextStyle(color: Colors.white, fontSize: 19),),
                 ),
               )
           ],),
