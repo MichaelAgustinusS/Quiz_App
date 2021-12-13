@@ -32,6 +32,7 @@ class _CreateQuizState extends State<CreateQuiz> {
       });
 
       Map<String, String> quizData = {
+        "quizId" : quizId,
         "quizImgUrl" : quizImgUrl,
         "quizTitle" : quizTitle,
         "quizDesc" : quizDesc
